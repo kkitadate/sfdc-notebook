@@ -6,6 +6,7 @@
 ```
 $ npm install gitbook-cli -g
 $ gitbook init
+$ gitbook build
 $ gitbook serve
 ```
 
