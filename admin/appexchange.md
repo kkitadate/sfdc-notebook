@@ -1,4 +1,4 @@
-# APPEXCHANGE : 1%
+# APPEXCHANGE
 
 アドミニストレーター試験での割合 : 1%
 
