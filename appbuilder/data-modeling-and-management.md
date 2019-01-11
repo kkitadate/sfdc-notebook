@@ -18,7 +18,7 @@
 [独自のデータモデルの設計](https://help.salesforce.com/articleView?id=schema_builder.htm&type=5)
 
 - データを最適化し, ユーザ固有のニーズに適合させる。
-- スキーマビルダーを利用し, データモデルの視覚化と編集ができる。
+- [スキーマビルダー](data-modeling-and-management.md#スキーマビルダの機能と考慮事項)を利用し, データモデルの視覚化と編集ができる。
 
 ### リレーション種別の機能
 
@@ -96,17 +96,68 @@
 
 ### スキーマビルダの機能と考慮事項
 
+[スキーマビルダーの使用 単元 | Salesforce Trailhead](https://trailhead.salesforce.com/ja/content/learn/modules/data_modeling/schema_builder?trail_id=force_com_admin_beginner)
+
+- 項目の値, 必須項目, オブジェクトの関係などの詳細を表示できる。
+- 以下のものが追加可能
+  - カスタムオブジェクト
+  - 参照関係
+  - 主従関係
+  - カスタム項目(地理位置情報を除く)
 
 ### データをインポートおよびエクスポートする
 
+[データの管理 | Salesforce Trailhead](https://trailhead.salesforce.com/ja/content/learn/modules/lex_implementation_data_management)
 
-#### オプション
+#### データのインポート
 
+[データの Salesforce へのインポート](https://help.salesforce.com/articleView?id=importing.htm&type=5)
 
-#### 考慮事項
+- インポートウィザード
+  - 5万レコードまで
+  - インポート可能なオブジェクト種別
+    - 取引先(法人/個人), 取引先責任者
+    - リード, ソリューション
+    - キャンペーンメンバー(キャンペーンは対象外)
+    - カスタムオブジェクト
+  - 主な対象外オブジェクト
+    - 商談, キャンペーン, ケース, ユーザ
+    - 商品, 契約, 輸入商品, ドキュメント
+- データローダ
+  - クライアントアプリケーション
+  - 500万レコードまで可能
+  - コマンドラインでの操作可能(Windowsのみ)
+    - [データローダのコマンドラインインターフェース](https://help.salesforce.com/articleView?id=using_the_command_line_interface.htm&type=5)
+  - SOAP APIを利用。ただし処理を迅速化する場合, Bulk APIを使用するように設定可能
+    - [データローダの設定](https://help.salesforce.com/articleView?id=configuring_the_data_loader.htm&type=5)
+  - その他考慮事項
+    - 数式項目は参照のみのため、インポートされたデータを受け入れない
+    - 項目の入力規則に違反するレコードはインポートされない, など
 
+#### データのエクスポート
+
+[Salesforce からバックアップデータをエクスポートする](https://help.salesforce.com/articleView?id=admin_exportdata.htm&type=5)
+
+- エクスポートウィザード
+  - デフォルトではシステム管理者のみ権限あり
+  - 設定 > [データのエクスポート]
+    - [今すぐエクスポート]: 前回のエクスポートから十分な時間経過が必要
+    - [エクスポートをスケジュール]
+      - ウィークリーエクスポート
+        - Enterprise,Performance,Unlimited Edition のみ
+      - マンスリーエクスポート
+  - Sandbox はサポート外
+  - ファイルサイズに関する考慮事項
+    - 組織のデータサイズが大きい場合、複数の .zip アーカイブが作成される
+    - 各 .zip アーカイブの最大サイズは約 512 MB
+- データローダ
+  - クライアントアプリケーション(前述)
+  - エクスポートプロセスの自動化やAPIを使用した別のシステムとの連携など
 
 ### 外部オブジェクト
+
+[Salesforce Connect | Salesforce Trailhead](https://trailhead.salesforce.com/ja/content/learn/modules/lightning_connect)
+
 
 
 #### ユースケース
