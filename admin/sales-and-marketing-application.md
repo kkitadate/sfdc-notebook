@@ -98,10 +98,20 @@
 リード管理を自動化する
 ---
 - [キューの設定](https://help.salesforce.com/articleView?id=setting_up_queues.htm&type=5) (ワークロードを共有するチームへのレコードの優先度付け、配布、割り当て)
+  - 例: 各地域のセールスグループ毎にキューを作成する
 - [割り当てルールの設定](https://help.salesforce.com/articleView?id=creating_assignment_rules.htm&type=5) (処理方法を決定する条件を定義)
+  - ルールに含まれるエントリの処理順序(1,2,3,...)
+  - 割り当てられるために必要な条件
+    - カスタム項目を使用可能
+    - ただしその項目が削除された場合, ルールのエントリも自動的に削除
+  - 条件に一致した場合に割り当てられる ユーザ または キュー
+    - ここで指定したユーザは無効にすることはできない
+    - リードに対する参照権限を持つユーザのみ割り当て可能
 - [営業チームの Web サイトからのリードの生成](https://help.salesforce.com/articleView?id=setting_up_web-to-lead.htm&type=5), [Web-to-リードの設定に関するガイドライン](https://help.salesforce.com/articleView?id=customize_leadpreparation.htm&type=5)
 - [自動レスポンスルールの設定](https://help.salesforce.com/articleView?id=creating_auto-response_rules.htm&type=5) (Web-to-リードに対しレコードの属性に基づいてルールを作成)
-
+  - 例: リードソース毎にレスポンスの内容を切り替える
+    - メールテンプレートを複数作成
+    - リードソースに基づき, どのテンプレートを使用するか自動レスポンスルールを作成
 
 キャンペーン管理
 ---
