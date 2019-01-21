@@ -95,6 +95,10 @@
 
 ### マクロ
 - 適切なメールテンプレートの選択など、ケースに関する反復作業を実行
+  - 一括メール送信では以下のテンプレートが使用可能(Visualforceは使用不可)
+    - テキスト
+    - HTML(レターヘッドを使用する)
+    - カスタム HTML(レターヘッドを使用しない)
 - [マクロの設定および使用 | Salesforce Help](https://help.salesforce.com/articleView?id=macros_def.htm&type=5)
 
 
