@@ -130,9 +130,12 @@
     - [データローダのコマンドラインインターフェース](https://help.salesforce.com/articleView?id=using_the_command_line_interface.htm&type=5)
   - SOAP APIを利用。ただし処理を迅速化する場合, Bulk APIを使用するように設定可能
     - [データローダの設定](https://help.salesforce.com/articleView?id=configuring_the_data_loader.htm&type=5)
-  - その他考慮事項
-    - 数式項目は参照のみのため、インポートされたデータを受け入れない
-    - 項目の入力規則に違反するレコードはインポートされない, など
+- インポートする前に検討すべき事項
+  - インポートファイルには、各レコードの所有者を含める
+  - インポートファイルのデータ重複を排除する
+- その他考慮事項
+  - 数式項目は参照のみのため、インポートされたデータを受け入れない
+  - 項目の入力規則に違反するレコードはインポートされない, など
 
 #### データのエクスポート
 
